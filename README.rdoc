@@ -1,4 +1,4 @@
-== README - Rails TODO App (simple)
+== Rails TODO App (simple)
 
 A simple TODO app *built* **in the works** to illustrate the beauty of learning Ruby on Rails.
 

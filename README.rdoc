@@ -10,6 +10,8 @@ A simple TODO app *built* **in the works** to illustrate the beauty of learning 
 
 * More...
 
+For an idea of the overall structure checkout **db/schema.rb** and the **app/models** directory
+
 
 === Installation
 

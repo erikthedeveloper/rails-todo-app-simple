@@ -1,28 +1,22 @@
-== README
+== README - Rails TODO App (simple)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple TODO app *built* **in the works** to illustrate the beauty of learning Ruby on Rails.
 
-Things you may want to cover:
+* Utilizing various `rails generate` commands
 
-* Ruby version
+* Well documented code
 
-* System dependencies
+* A variety of relationships between users, projects, tasklists, tasks, and tags
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* More...
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+=== Installation
+
+For now... steer clear ;). But if you must
+
+* `git clone...`
+
+* `rake db:setup`
+
+* `rails server`

@@ -5,7 +5,6 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Task</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,7 +16,6 @@
       <tr>
         <td><%= tag.name %></td>
         <td><%= tag.description %></td>
-        <td><%= tag.task %></td>
         <td><%= link_to 'Show', tag %></td>
         <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
         <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,31 @@
+<h1>Listing tasklists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Project</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasklists.each do |tasklist| %>
+      <tr>
+        <td><%= tasklist.name %></td>
+        <td><%= tasklist.description %></td>
+        <td><%= tasklist.project %></td>
+        <td><%= link_to 'Show', tasklist %></td>
+        <td><%= link_to 'Edit', edit_tasklist_path(tasklist) %></td>
+        <td><%= link_to 'Destroy', tasklist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tasklist', new_tasklist_path %>

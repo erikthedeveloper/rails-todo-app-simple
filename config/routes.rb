@@ -1,4 +1,6 @@
 TodoSimpleMvc::Application.routes.draw do
+  resources :tasklists
+
   resources :projects
 
   resources :users

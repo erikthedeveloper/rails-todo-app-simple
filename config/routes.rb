@@ -1,12 +1,15 @@
 TodoSimpleMvc::Application.routes.draw do
+
+  # root 'pages#home'
+  get "/" => "pages#home"
+  get "dashboard" => "pages#dashboard"
+  get "project" => "pages#project"
+  get "settings" => "pages#settings"
+
   resources :tags
-
   resources :tasks
-
   resources :tasklists
-
   resources :projects
-
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

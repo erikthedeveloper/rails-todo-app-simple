@@ -1,0 +1,6 @@
+<% if @user.new_record? %>
+    console.log('Fail');
+<% else %>
+    console.log("Success");
+    $("#users").append("<%= escape_javascript(render @user) %>");
+<% end %>

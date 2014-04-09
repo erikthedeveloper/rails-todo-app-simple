@@ -4,7 +4,7 @@ A simple TODO app *built* **in the works** to illustrate the beauty of learning 
 
 * Utilizing various `rails generate` commands
 
-* Well documented code
+* Well documented code (... again, in the works ;) )
 
 * A variety of relationships between users, projects, tasklists, tasks, and tags
 
@@ -12,6 +12,11 @@ A simple TODO app *built* **in the works** to illustrate the beauty of learning 
 
 For an idea of the overall structure checkout **db/schema.rb** and the **app/models** directory
 
+== Features Implemented
+
+* Basic models and ORM relationships set up
+    * ...
+* 1st revision Ajax CRUD for Users (from '/' dashboard)
 
 === Installation
 

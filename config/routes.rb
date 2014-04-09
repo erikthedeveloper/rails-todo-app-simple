@@ -1,10 +1,7 @@
 TodoSimpleMvc::Application.routes.draw do
 
   # root 'pages#home'
-  get "/" => "pages#home"
-  get "dashboard" => "pages#dashboard"
-  get "project" => "pages#project"
-  get "settings" => "pages#settings"
+  get "/" => "dashboard#index"
 
   resources :tags
   resources :tasks

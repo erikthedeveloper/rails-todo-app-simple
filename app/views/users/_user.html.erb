@@ -1,0 +1,3 @@
+<%= div_for user do %>
+<strong><%= user.username %>: </strong> <%= user.email %> - <%= link_to "delete", user, {method: :delete, remote: true} %>
+<% end %>

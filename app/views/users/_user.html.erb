@@ -1,29 +1,19 @@
-<%= div_for user do %>
-<strong><%= user.username %>: </strong> <%= user.email %> - <%= link_to "delete", user, {method: :delete, remote: true} %>
+<%= div_for user, class: 'well' do %>
+<h2><%= user.username %> <small><%= user.email %> - <%= link_to "delete", user, {method: :delete, remote: true} %></small></h2>
 <br>
 
+<div class="user_projects">
 <% user.projects.each do |project| %>
+        <%= render project %>
+<% end %> <!-- each projects -->
+</div>
 
-    <%= div_for project do %>
-        <%= project.name %>
-        <div class="project_tasks">
-            <ul>
-                <% project.tasklists.each do |tasklist| %>
-                    <li>
-                    <%= tasklist.name %>
-                        <ul>
-                            <% tasklist.tasks.each do |task| %>
-                            <li>
-                            <%= task.title %>
-                            </li>
-                            <% end %>
-                        </ul>
-                    </li>
-                <% end %>
-            </ul>
-        </div>
-    <% end %>
+<hr>
+<%= form_for user.projects.new, remote: true, class: 'form form-horizontal' do |f| %>
+    <%= f.text_field 'name', class: "form-control", placeholder: 'Project Name' %>
 
+    <%= f.hidden_field 'user_id' %>
+    <%= f.submit class: "btn btn-md btn-success btn-block" %>
 <% end %>
 
 <% end %>

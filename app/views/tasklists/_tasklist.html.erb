@@ -1,0 +1,15 @@
+<%= div_for tasklist do %>
+    <h5><%= tasklist.name %> <small><%= link_to "delete", tasklist, {method: :delete, remote: true} %></small></h5>
+    <ul class="ul_tasks">
+    <% tasklist.tasks.each do |task| %>
+        <%= render task %>
+    <% end %>
+    </ul>
+
+    <%= form_for tasklist.tasks.new, remote: true do |f| %>
+        <%= f.text_field 'title' %>
+
+        <%= f.hidden_field 'tasklist_id' %>
+        <%= f.submit %>
+    <% end %>
+<% end %> <!-- taskslist tasks -->

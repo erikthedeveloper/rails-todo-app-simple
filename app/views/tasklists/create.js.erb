@@ -1,0 +1,7 @@
+<% if @tasklist.new_record? %>
+    console.log('Fail');
+<% else %>
+    console.log("Success");
+    $("#<%= dom_id(@tasklist.project) %> .project_tasklists").append("<%= escape_javascript(render @tasklist) %>");
+    $("form#new_tasklist")[0].reset();
+<% end %>

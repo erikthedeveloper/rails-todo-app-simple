@@ -5,6 +5,7 @@ class CreateTasks < ActiveRecord::Migration
       t.text :description
       t.datetime :start_date
       t.datetime :due_date
+      t.boolean  :complete
       t.belongs_to :tasklist, index: true
 
       t.timestamps

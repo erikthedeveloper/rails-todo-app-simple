@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140405200349) do
     t.text     "description"
     t.datetime "start_date"
     t.datetime "due_date"
+    t.boolean  "complete"
     t.integer  "tasklist_id"
     t.datetime "created_at"
     t.datetime "updated_at"

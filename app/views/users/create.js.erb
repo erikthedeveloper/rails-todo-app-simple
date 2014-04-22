@@ -1,7 +1,0 @@
-<% if @user.new_record? %>
-    console.log('Fail');
-<% else %>
-    console.log("Success");
-    $("#users").append("<%= escape_javascript(render @user) %>");
-    $("form#new_user")[0].reset();
-<% end %>

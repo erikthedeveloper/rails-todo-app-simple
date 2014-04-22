@@ -5,11 +5,13 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
-    respond_with(@tasks = Task.all)
+    @tasks = Task.all
+    render :json => @tasks
+    # respond_with(@tasks)   # WTF????
   end
 
   def show
-
+    render :json => @task
   end
 
   def create
@@ -26,26 +28,21 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update
-    respond_to do |format|
-      if @task.update(task_params)
-        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @task.update(task_params)
+    #     format.html { redirect_to @task, notice: 'Task was successfully updated.' }
+    #     format.json { head :no_content }
+    #   else
+    #     format.html { render action: 'edit' }
+    #     format.json { render json: @task.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
-    @task.destroy
-    respond_to do |format|
-      format.html { redirect_to tasks_url }
-      format.json { head :no_content }
-      format.js
-    end
+    render :json => { destroyed: true, task: @task }
   end
 
   private

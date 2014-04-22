@@ -1,7 +1,0 @@
-<% if @project.new_record? %>
-    console.log('Fail');
-<% else %>
-    console.log("Success");
-    $("#<%= dom_id(@project.user) %> .user_projects").append("<%= escape_javascript(render @project) %>");
-    $("form#new_project")[0].reset();
-<% end %>

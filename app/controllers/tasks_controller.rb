@@ -1,42 +1,26 @@
 class TasksController < ApplicationController
+
+  respond_to :json
+
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
-  # GET /tasks
-  # GET /tasks.json
   def index
-    @tasks = Task.all
-    render :json => @tasks
+    respond_with(@tasks = Task.all)
   end
 
-  # GET /tasks/1
-  # GET /tasks/1.json
   def show
+
   end
 
-  # GET /tasks/new
-  def new
-    @task = Task.new
-  end
-
-  # GET /tasks/1/edit
-  def edit
-  end
-
-  # POST /tasks
-  # POST /tasks.json
   def create
-    @task = Task.new(task_params)
 
-    respond_to do |format|
-      if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @task }
-        format.js
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
-      end
+    if @task = Task.create(task_params)
+      render :json => @task, status: :created
+      # format.js
+    else
+      render :json => @task.errors, status: :unprocessable_entity
     end
+
   end
 
   # PATCH/PUT /tasks/1

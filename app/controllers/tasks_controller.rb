@@ -42,7 +42,7 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
-    render :json => { destroyed: true, task: @task }
+    render :json => { destroyed: true, task: @task.destroy }
   end
 
   private
